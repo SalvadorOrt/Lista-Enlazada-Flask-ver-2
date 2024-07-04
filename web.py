@@ -13,8 +13,15 @@ def root():
             valor = request.form["valor"]
             lista.append(int(valor))
             print(valor)
+        if "agregar_inicio" in request.form:
+            valor = request.form["valor"]
+            lista.prepend(int(valor))
+            print(valor)
         if "eliminar_final" in request.form:
             temporal = lista.pop()
+            print(temporal)
+        if "eliminar_inicio" in request.form:
+            temporal = lista.prepop()
             print(temporal)
     return render_template('index.html',lista = lista.print(),elemento_eliminado = temporal)
 if __name__ == '__main__':
