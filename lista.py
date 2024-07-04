@@ -12,3 +12,12 @@ class Lista():
         while(temp != None):
             print(temp.elemento)
             temp = temp.next
+    def append(self,dato):
+        nodo = Nodo(dato)
+        if self.length == 0:
+            self.head = nodo
+            self.tail = nodo
+        else:
+            self.tail.next = nodo
+            self.tail = nodo
+        self.length += 1
